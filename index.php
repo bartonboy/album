@@ -29,6 +29,8 @@
     </div>
     <script type="text/javascript" src="http://yui.yahooapis.com/3.7.2/build/yui/yui-min.js"></script>
     <script src="node_modules/socket.io/node_modules/socket.io-client/dist/socket.io.js"></script>
+    <script type="text/javascript" src="javascript/module/module-manager.js"></script>
+    <script type="text/javascript" src="javascript/module/module.js"></script>
     <script type="text/javascript" src="javascript/album.js"></script>
 </body>
 </html>
