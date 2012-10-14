@@ -1,5 +1,5 @@
 var app = require("http").createServer(handler),
-    io  = require("socket.io").listen(app),
+    io  = require("./lib/socket.io").listen(app),
     fs  = require("fs");
 
 app.listen(1388);
@@ -19,8 +19,9 @@ function handler (req, res) {
 }
 
 io.sockets.on("connection", function (socket) {
-    socket.emit("news", { hello: "world" });
-    socket.on("my other event", function (data) {
-        console.log(data);
+    socket.on("upload-complete", function (data) {
+        console.log(this.id);
+        console.log(this);
+        socket.emit("show-notification", data);
     });
 });

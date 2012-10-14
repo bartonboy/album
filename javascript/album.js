@@ -1,4 +1,24 @@
-YUI().use("node-base", "event-delegate", "panel", function (Y) {
+YUI().use("_upload_form", "_save_form", "overlay",
+          "module-manager", "node-base", "event-delegate", "panel", function (Y) {
+
+    var _socket = io.connect("http://node.josephj.com"),
+        _manager = new Y.ModuleManager(),
+        _overlay = new Y.Panel({
+            headerContent:"新訊息通知",
+            bodyContent:"有人剛上傳了一張照片！",
+            centered: true,
+            visible: false,
+            width: "300px",
+            height: "80px",
+            render: true
+        });
+
+    _manager.startAll();
+    _manager.listen("upload-complete", function (name, id, data) {
+        // Send to server.
+        _socket.emit("upload-complete", {photo_id: data.photo_id});
+    });
+
 
     var panel = new Y.Panel({
         render: true,
@@ -17,11 +37,10 @@ YUI().use("node-base", "event-delegate", "panel", function (Y) {
         panel.show();
     }, "#list", ".photo-link");
 
-    var socket = io.connect("http://node.josephj.com");
-    socket.on("news", function (data) {
-        console.log(data);
-        socket.emit("my other event", { my: "data" });
+    _socket.on("show-notification", function (data) {
+        _overlay.show();
+        Y.later(10000, null, function () {
+            _overlay.hide();
+        });
     });
-
-
 });

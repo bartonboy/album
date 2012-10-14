@@ -31,6 +31,8 @@
     <script src="node_modules/socket.io/node_modules/socket.io-client/dist/socket.io.js"></script>
     <script type="text/javascript" src="javascript/module/module-manager.js"></script>
     <script type="text/javascript" src="javascript/module/module.js"></script>
+    <script type="text/javascript" src="javascript/_upload_form.js"></script>
+    <script type="text/javascript" src="javascript/_save_form.js"></script>
     <script type="text/javascript" src="javascript/album.js"></script>
 </body>
 </html>
