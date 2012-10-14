@@ -1,0 +1,30 @@
+#masthead {
+    color: #fff;
+    background: #333;
+    margin-bottom: 10px;
+    padding: 10px;
+    @include box-shadow(#333 0 1px 7px);
+    .logo {
+        float: left;
+        a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 197%;
+            font-family: "Microsoft JhengHei", "微軟正黑體";
+            letter-spacing: 1px;
+            display: block;
+        }
+    }
+    .bookmarklet {
+        float: right;
+        text-align: right;
+        p {
+            margin-bottom: 5px;
+        }
+        a {
+            background-color: #faf55f;
+            letter-spacing: 1px;
+        }
+    }
+}

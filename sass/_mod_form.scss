@@ -1,0 +1,55 @@
+.mod-form {
+    margin-bottom: 20px;
+    .mod-content {
+        padding: 0 0 0 5px;
+    }
+    h1, label {
+        font-weight: bold;
+        font-family: Calibri;
+    }
+    h1 {
+        font-size: 138.5%;
+        margin: 10px 0;
+    }
+    label {
+        display: inline-block;
+        padding-right: 10px;
+        width: 40px;
+        text-align: right;
+    }
+    textarea {
+        padding: 3px 2px;
+        width: 200px;
+    }
+    input[type=text],
+    textarea {
+        color: #555;
+        border: 1px solid #ccc;
+        @include border-radius(3px);
+        line-height: 20px;
+        height: 20px;
+        padding: 4px 6px;
+        width: 200px;
+        @include transition-property(border);
+        @include transition-delay(0.2s);
+        @include transition-timing-function(linear);
+    }
+    input[type=submit] {
+        background-color: #1b7ae0;
+        color: #fff;
+        letter-spacing: 1px;
+    }
+    textarea {
+        height: 80px;
+    }
+    .row {
+        margin: 10px 0;
+        * {
+            vertical-align: middle;
+        }
+    }
+    .row-button {
+        text-align: center;
+    }
+}
+

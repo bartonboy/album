@@ -1,0 +1,176 @@
+@charset "UTF-8";
+/* line 3, ../sass/album.scss */
+.clearfix {
+    zoom: 1;
+}
+
+/* line 6, ../sass/album.scss */
+.clearfix:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+/* line 11, ../sass/album.scss */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* line 15, ../sass/album.scss */
+#doc3 {
+    margin: 0;
+}
+
+/* line 1, ../sass/_masthead.scss */
+#masthead {
+    color: #fff;
+    background: #333;
+    margin-bottom: 10px;
+    padding: 10px;
+    -webkit-box-shadow: #333333 0 1px 7px;
+    -moz-box-shadow: #333333 0 1px 7px;
+    box-shadow: #333333 0 1px 7px;
+}
+/* line 7, ../sass/_masthead.scss */
+#masthead .logo {
+    float: left;
+}
+/* line 9, ../sass/_masthead.scss */
+#masthead .logo a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 197%;
+    font-family: "Microsoft JhengHei", "微軟正黑體";
+    letter-spacing: 1px;
+    display: block;
+}
+/* line 19, ../sass/_masthead.scss */
+#masthead .bookmarklet {
+    float: right;
+    text-align: right;
+}
+/* line 22, ../sass/_masthead.scss */
+#masthead .bookmarklet p {
+    margin-bottom: 5px;
+}
+/* line 25, ../sass/_masthead.scss */
+#masthead .bookmarklet a {
+    background-color: #faf55f;
+    letter-spacing: 1px;
+}
+
+/* line 2, ../sass/_list.scss */
+#list ul {
+    margin: 0 auto;
+}
+/* line 5, ../sass/_list.scss */
+#list li {
+    overflow: hidden;
+    float: left;
+    display: inline-block;
+    margin: 0 5px 5px 0;
+}
+/* line 10, ../sass/_list.scss */
+#list li .photo {
+    background: #000;
+    border: solid 1px #ccc;
+    text-align: center;
+    width: 240px;
+    height: 240px;
+}
+/* line 16, ../sass/_list.scss */
+#list li .photo a {
+    width: 240px;
+    height: 240px;
+    display: table-cell;
+    display: inline-block;
+}
+/* line 21, ../sass/_list.scss */
+#list li .photo a * {
+    vertical-align: middle;
+}
+
+/* line 1, ../sass/_mod_form.scss */
+.mod-form {
+    margin-bottom: 20px;
+}
+/* line 3, ../sass/_mod_form.scss */
+.mod-form .mod-content {
+    padding: 0 0 0 5px;
+}
+/* line 6, ../sass/_mod_form.scss */
+.mod-form h1, .mod-form label {
+    font-weight: bold;
+    font-family: Calibri;
+}
+/* line 10, ../sass/_mod_form.scss */
+.mod-form h1 {
+    font-size: 138.5%;
+    margin: 10px 0;
+}
+/* line 14, ../sass/_mod_form.scss */
+.mod-form label {
+    display: inline-block;
+    padding-right: 10px;
+    width: 40px;
+    text-align: right;
+}
+/* line 20, ../sass/_mod_form.scss */
+.mod-form textarea {
+    padding: 3px 2px;
+    width: 200px;
+}
+/* line 25, ../sass/_mod_form.scss */
+.mod-form input[type=text],
+.mod-form textarea {
+    color: #555;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    line-height: 20px;
+    height: 20px;
+    padding: 4px 6px;
+    width: 200px;
+    -webkit-transition-property: border;
+    -moz-transition-property: border;
+    -ms-transition-property: border;
+    -o-transition-property: border;
+    transition-property: border;
+    -webkit-transition-delay: 0.2s;
+    -moz-transition-delay: 0.2s;
+    -ms-transition-delay: 0.2s;
+    -o-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -ms-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
+}
+/* line 37, ../sass/_mod_form.scss */
+.mod-form input[type=submit] {
+    background-color: #1b7ae0;
+    color: #fff;
+    letter-spacing: 1px;
+}
+/* line 42, ../sass/_mod_form.scss */
+.mod-form textarea {
+    height: 80px;
+}
+/* line 45, ../sass/_mod_form.scss */
+.mod-form .row {
+    margin: 10px 0;
+}
+/* line 47, ../sass/_mod_form.scss */
+.mod-form .row * {
+    vertical-align: middle;
+}
+/* line 51, ../sass/_mod_form.scss */
+.mod-form .row-button {
+    text-align: center;
+}

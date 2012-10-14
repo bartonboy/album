@@ -1,0 +1,20 @@
+@import "compass";
+
+.clearfix {
+    zoom: 1;
+}
+.clearfix:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+#doc3 {
+    margin: 0;
+}
+@import "masthead";
+@import "list";
+@import "mod_form";
