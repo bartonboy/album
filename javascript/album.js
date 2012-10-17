@@ -1,5 +1,7 @@
 YUI().use("_upload_form", "_save_form", "overlay",
-          "module-manager", "node-base", "event-delegate", "panel", function (Y) {
+          "module-manager", "node-base", "event-delegate", "panel", "console", function (Y) {
+
+    (new Y.Console()).render();
 
     var _socket = io.connect("http://node.josephj.com"),
         _manager = new Y.ModuleManager(),
