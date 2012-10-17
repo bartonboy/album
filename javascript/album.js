@@ -3,7 +3,7 @@ YUI().use("_upload_form", "_save_form", "overlay",
 
     (new Y.Console()).render();
 
-    var _socket = io.connect("http://node.josephj.com"),
+    var _socket = io.connect("http://socket.f2eclass.com"),
         _manager = new Y.ModuleManager(),
         _overlay = new Y.Panel({
             headerContent:"新訊息通知",
