@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="stylesheets/album.css">
 </head>
 <body class="yui3-skin-sam">
-    <div id="doc3" class="yui-t3">
+    <div id="doc3">
         <div id="hd" role="banner">
 <?php include_once "inc/_masthead.php"; ?>
        </div><!-- #hd (end) -->
@@ -18,10 +18,6 @@
 <?php include_once "inc/_list.php"; ?>
                 </div><!-- .yui-b (end) -->
             </div><!-- #yui-main (end) -->
-            <div class="yui-b">
-<?php include_once "inc/_save_form.php"; ?>
-<?php include_once "inc/_upload_form.php"; ?>
-            </div><!-- .yui-b (end) -->
         </div><!-- #bd (end) -->
         <div id="ft" role="contentinfo">
             <p></p>
@@ -33,6 +29,7 @@
     <script type="text/javascript" src="javascript/module/module.js"></script>
     <script type="text/javascript" src="javascript/_upload_form.js"></script>
     <script type="text/javascript" src="javascript/_save_form.js"></script>
+    <script type="text/javascript" src="javascript/_list.js"></script>
     <script type="text/javascript" src="javascript/album.js"></script>
 </body>
 </html>

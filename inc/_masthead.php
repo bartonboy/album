@@ -9,7 +9,7 @@
             </div>
             <div class="bookmarklet">
                 <p>請將此按鈕拖拉到瀏覽器書籤列</p>
-                <a href='javascript:(function(){var el = document.createElement("script");el.src = "http://f2eclass.com/lab/flickr/bookmarklet.js";document.getElementsByTagName("head")[0].appendChild(el);}());' class="yui3-button">將照片儲存到 F2E 分享區</a>
+                <a href='javascript:(function(){var el = document.createElement("script");el.src = "http://f2eclass.com/lab/flickr/bookmarklet.js";document.getElementsByTagName("head")[0].appendChild(el);}());'>將照片儲存到 F2E 分享區</a>
             </div>
         </div>
     </div>

@@ -13,16 +13,19 @@ curl_close($ch);
         <div class="bd">
             <ul class="clearfix">
 <?php
-      foreach ($photos as $photo):
-          $img = "http://farm{$photo->farm}.staticflickr.com/{$photo->server}/{$photo->id}_{$photo->secret}_m.jpg";
-          $title = $photo->title;
+      foreach ($photos as $photo) :
+          $img = "http://farm{$photo->farm}.staticflickr.com/{$photo->server}/";
+          $img.= "{$photo->id}_{$photo->secret}_m.jpg";
+          $title = htmlspecialchars($photo->title);
+          $style = "background-image:url(" . htmlspecialchars($img) . ");";
 ?>
                 <li>
                     <div class="photo">
-                        <a href="<?php echo $img; ?>" target="_blank" class="photo-link">
-                            <img src="<?php echo $img; ?>" alt="<?php echo htmlspecialchars($title); ?>" width="240">
-                        </a>
-                        <div class="title"><?php echo htmlspecialchars($title); ?></div>
+                        <a href="<?php echo $img; ?>"
+                           class="photo-link yui3-image-loader"
+                           target="_blank"
+                           style="<?php echo $style; ?>"></a>
+                        <div class="title"><?php echo $title; ?></div>
                     </div>
                 </li>
 <?php endforeach; ?>
