@@ -11,6 +11,7 @@
     <div id="doc3">
         <div id="hd" role="banner">
 <?php include_once "inc/_masthead.php"; ?>
+<?php include_once "inc/_action.php"; ?>
        </div><!-- #hd (end) -->
        <div id="bd" role="main">
             <div id="yui-main">
@@ -23,13 +24,14 @@
             <p></p>
         </div>
     </div>
+<?php include_once "inc/_photo.php"; ?>
     <script type="text/javascript" src="http://yui.yahooapis.com/3.7.2/build/yui/yui-min.js"></script>
     <script src="javascript/socket.io.js"></script>
     <script type="text/javascript" src="javascript/module/module-manager.js"></script>
     <script type="text/javascript" src="javascript/module/module.js"></script>
-    <script type="text/javascript" src="javascript/_upload_form.js"></script>
-    <script type="text/javascript" src="javascript/_save_form.js"></script>
+    <script type="text/javascript" src="javascript/_action.js"></script>
     <script type="text/javascript" src="javascript/_list.js"></script>
+    <script type="text/javascript" src="javascript/_photo.js"></script>
     <script type="text/javascript" src="javascript/album.js"></script>
 </body>
 </html>

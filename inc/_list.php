@@ -24,6 +24,7 @@ curl_close($ch);
                         <a href="<?php echo $img; ?>"
                            class="photo-link yui3-image-loader"
                            target="_blank"
+                           title="<?php echo $title; ?>"
                            style="<?php echo $style; ?>"></a>
                         <div class="title"><?php echo $title; ?></div>
                     </div>
