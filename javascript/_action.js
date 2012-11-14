@@ -46,7 +46,9 @@ YUI.add("_action", function (Y) {
         _uploader.after("fileselect", _handleFileSelect);
         // 步驟 2 - 上傳中 (整體進度) : 更新整體上傳進度
         _uploader.on("totaluploadprogress", _handleTotalUploadProgress);
-        // 步驟 3 - 所有檔案皆上傳完成 : 處理按鈕文字與 Uploader 讓檔案可以再度上傳
+        // 步驟 3 - 單一檔案上傳完成 : 在列表上顯示上傳完畢
+        _uploader.on("uploadcomplete", _handleUploadComplete);
+        // 步驟 4 - 所有檔案皆上傳完成 : 處理按鈕文字與 Uploader 讓檔案可以再度上傳
         _uploader.on("alluploadscomplete", _handleAllUploadsComplete);
     };
 
@@ -58,6 +60,7 @@ YUI.add("_action", function (Y) {
             return;
         }
         if (_uploader.get("fileList").length > 0) {
+            _uploader.set("selectButtonLabel", "上傳中..");
             _uploader.set("enabled", false);
             Y.later(1000, null, function () {
                 _uploader.uploadAll();
@@ -67,16 +70,21 @@ YUI.add("_action", function (Y) {
 
     // 步驟 2 - 上傳中 (整體進度) : 更新整體上傳進度
     _handleTotalUploadProgress = function (e) {
+        _uploader.set("selectButtonLabel", "上傳中 (" + e.percentLoaded + "%)");
         _api.log("_handleTotalUploadProgress() is executed.");
-        _uploader.set("selectButtonLabel", "上傳中... (" + e.percentLoaded + "%)");
     };
 
-    // 步驟 3 - 所有檔案皆上傳完成 : 顯示訊息、處理按鈕與 Uploader 讓檔案可以再度上傳
+    // 步驟 3 - 單一檔案上傳完成 : 在列表上顯示上傳完畢
+    _handleUploadComplete = function (e) {
+        Y.log("_handleUploadComplete() is executed.");
+        _api.broadcast("upload-success", Y.JSON.parse(e.data));
+    };
+
+    // 步驟 4 - 所有檔案皆上傳完成 : 顯示訊息、處理按鈕與 Uploader 讓檔案可以再度上傳
     _handleAllUploadsComplete = function (event) {
         _api.log("_handleAllUploadsComplete() is executed.");
         _uploader.set("enabled", true);
         _uploader.set("fileList", []);
-        _uploader.set("selectButtonLabel", "上傳完畢");
     };
 
     _init = function (api) {
@@ -94,6 +102,7 @@ YUI.add("_action", function (Y) {
 
 }, "0.0.1", {
     "requires": [
+        "json-parse",
         "module",
         "uploader"
     ]

@@ -12,8 +12,26 @@ YUI.add("_list", function (Y) {
         //================
         // 事件處理函式
         //================
+        _handleUploadSuccess,
         _handlePhotoClick,
         _handleViewload;
+
+    _handleUploadSuccess = function (name, id, data) {
+        _api.log("_handleUploadSuccess() 被執行");
+        var img = "http://farm" + data.farm + ".staticflickr.com/" + data.server + "/";
+        img += data.id + "_" + data.secret + "_m.jpg";
+        var html = [
+            '<li>',
+            '    <div class="photo">',
+            '        <a href="' + img + '"',
+            '           class="photo-link"',
+            '           target="_blank"',
+            '           style="background-image:url(' + img + ')"></a>',
+            '    </div>',
+            '</li>'
+        ].join("");
+        _node.one(".bd ul").insert(html, 0);
+    };
 
     /**
      * 當使用者點選了照片的處理
@@ -63,6 +81,7 @@ YUI.add("_list", function (Y) {
     _init = function () {
         _api = this;
         _api.log("_init() 被執行");
+        _api.listen("upload-success", _handleUploadSuccess);
     };
 
     // 新增一個模組方便做模組間的資料傳遞
