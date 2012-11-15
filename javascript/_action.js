@@ -1,24 +1,65 @@
+/*global YUI, window*/
 YUI.add("_action", function (Y) {
 
     var _api,
+        _node,
         _uploader,
-        _isFinish  = false,
-        _html,
         _init,
+        _formNode,
+        _timestamp = parseInt((new Date()).getTime(), 10),
         //==============
         // 常數
         //==============
         SWF_URL    = "http://yui.yahooapis.com/3.7.3/build/uploader/assets/flashuploader.swf",
-        UPLOAD_URL = "http://f2eclass.com/service/index.php?method=upload&r=" + parseInt((new Date()).getTime(), 10),
+        UPLOAD_URL = "http://f2eclass.com/service/index.php?method=upload&r=" + _timestamp,
+        SAVE_URL   = "http://f2eclass.com/service/?method=saveURL&r=" + _timestamp,
+        //===============
+        // 函式
+        //===============
+        _saveCallback,
         //===============
         // 事件處理函式
         //===============
-        _handleViewload,
+        _handleAllUploadsComplete,
+        _handleFormSubmit,
         _handleFileSelect,
         _handleTotalUploadProgress,
-        _handleAllUploadsComplete;
+        _handleUploadComplete,
+        _handleViewload;
+
+    //===============
+    // 函式
+    //===============
+    _saveCallback = function (o) {
+        _api.log("_saveCallback() is executed.");
+        _formNode.one("input[name=url]").set("value", "");
+        _formNode.one("input[type=submit]").set("disabled", false);
+        _api.broadcast("upload-success", o);
+    };
+    //===============
+    // 事件處理函式
+    //===============
+    _handleFormSubmit = function (e) {
+        _api.log("_handleFormSubmit() is executed.");
+        e.halt();
+        var node = this;
+
+        // 基本的表單驗證
+        if (!node.one("input[name=url]").get("value")) {
+            window.alert("您未輸入 URL!");
+            return false;
+        }
+        node.one("input[type=submit]").set("disabled", true);
+        Y.jsonp([
+            SAVE_URL,
+            "url=" + encodeURIComponent(node.one("input[name=url]").get("value")),
+            "callback={callback}"
+        ].join("&"), _saveCallback);
+    };
 
     _handleViewload = function () {
+        _node = this.get("node");
+        _formNode = _node.one("form");
 
         // 若沒有安裝 Flash、也不支援 HTML5 上傳, 或者是 iOS 系統：一律不使用這個 Uploader
         if (Y.Uploader.TYPE === "none" || Y.UA.ios) {
@@ -50,6 +91,8 @@ YUI.add("_action", function (Y) {
         _uploader.on("uploadcomplete", _handleUploadComplete);
         // 步驟 4 - 所有檔案皆上傳完成 : 處理按鈕文字與 Uploader 讓檔案可以再度上傳
         _uploader.on("alluploadscomplete", _handleAllUploadsComplete);
+
+        _formNode.on("submit", _handleFormSubmit);
     };
 
     // Step 1 - 使用者選取好檔案即開始上傳
@@ -102,6 +145,7 @@ YUI.add("_action", function (Y) {
 
 }, "0.0.1", {
     "requires": [
+        "jsonp",
         "json-parse",
         "module",
         "uploader"

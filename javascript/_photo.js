@@ -29,7 +29,8 @@ YUI.add("_photo", function (Y) {
             modal       : true,
             visible     : false,
             centered    : true,
-            width       : 800
+            width       : 800,
+            zIndex      : 2
         });
 
         _api.listen("click-photo", _handlePhotoClick);
