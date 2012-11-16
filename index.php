@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>F2E 照片分享區</title>
-<script src="http://socket.f2eclass.com/socket.io/socket.io.js"></script>
+<script src="http://<?php echo $_SERVER["HTTP_HOST"]; ?>:1388/socket.io/socket.io.js"></script>
 <link rel="stylesheet" href="http://yui.yahooapis.com/2.8.0r4/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
 <link rel="stylesheet" href="http://yui.yahooapis.com/3.7.2/build/cssbutton/cssbutton.css">
 <link rel="stylesheet" href="stylesheets/album.css">
