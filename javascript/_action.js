@@ -11,8 +11,8 @@ YUI.add("_action", function (Y) {
         // 常數
         //==============
         SWF_URL    = "http://yui.yahooapis.com/3.7.3/build/uploader/assets/flashuploader.swf",
-        UPLOAD_URL = "http://f2eclass.com/service/index.php?method=upload&r=" + _timestamp,
-        SAVE_URL   = "http://f2eclass.com/service/?method=saveURL&r=" + _timestamp,
+        UPLOAD_URL = "/album/service/index.php?method=upload&r=" + _timestamp,
+        SAVE_URL   = "/album/service/?method=saveURL&r=" + _timestamp,
         //===============
         // 函式
         //===============

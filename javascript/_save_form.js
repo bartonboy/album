@@ -22,7 +22,7 @@ YUI.add("_save_form", function (Y) {
         }
         _formNode.one("input[type=submit]").set("disabled", true);
         Y.jsonp([
-            "http://f2eclass.com/service/?method=saveURL",
+            "/album/service/?method=saveURL",
             "url=" + encodeURIComponent(_formNode.one("input[name=url]").get("value")),
             "title=" + encodeURIComponent(_formNode.one("input[name=title]").get("value")),
             "description=" + encodeURIComponent(_formNode.one("textarea[name=description]").get("value")),

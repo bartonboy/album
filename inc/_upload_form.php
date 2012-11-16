@@ -6,7 +6,7 @@
         </div>
         <div class="bd">
             <p>請選取檔案即可將電腦中的照片上傳至此喔！</p>
-            <form method="post" action="http://f2eclass.com/service/?method=upload" enctype="multipart/form-data">
+            <form method="post" action="http://<?php echo $_SERVER["HTTP_HOST"]; ?>/service/?method=upload" enctype="multipart/form-data">
                 <div class="row row-main">
                     <label for="file">檔案</label>
                     <input type="file" name="file" id="file">

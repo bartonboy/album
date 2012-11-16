@@ -4,7 +4,7 @@
         <div class="bd clearfix">
             <div class="logo">
                 <h1>
-                    <a href="http://f2eclass.com/album">F2E 照片分享區</a>
+                    <a href="http://<?php echo $_SERVER["HTTP_HOST"]; ?>/album">F2E 照片分享區</a>
                 </h1>
             </div>
             <div class="bookmarklet">
