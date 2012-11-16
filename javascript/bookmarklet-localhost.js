@@ -58,15 +58,15 @@
 
     // 載入 Socket.IO 的函式庫
     scriptEl = document.createElement("script");
-    scriptEl.src = "http://f2eclass.com:1388/socket.io/socket.io.js";
+    scriptEl.src = "http://localhost:1388/socket.io/socket.io.js";
     document.getElementsByTagName("head")[0].appendChild(scriptEl);
     scriptEl.onload = function () {
-        socket = io.connect("f2eclass.com:1388");
+        socket = io.connect("localhost:1388");
     };
 
     // 以 Script Tag Hack (JSONP 的前身) 的方式發送 Request、存檔！
     request = [
-        "http://f2eclass.com/album/service/?method=saveURL",
+        "http://localhost/album/service/?method=saveURL",
         "url=" + encodeURIComponent(url),
         "title=" + encodeURIComponent(title),
         "callback=bookmarkCallback"
