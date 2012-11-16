@@ -82,6 +82,7 @@ YUI.add("_list", function (Y) {
         _api = this;
         _api.log("_init() 被執行");
         _api.listen("upload-success", _handleUploadSuccess);
+        _api.listen("receive-notification", _handleUploadSuccess);
     };
 
     // 新增一個模組方便做模組間的資料傳遞
