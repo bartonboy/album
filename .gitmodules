@@ -1,6 +1,6 @@
 [submodule "javascript/module"]
-	path = javascript/module
-	url = git@github.com:miiicasa/module.git
+        path = javascript/module
+        url = git://github.com/miiicasa/module.git
 [submodule "lib/socket.io"]
-	path = lib/socket.io
-	url = git://github.com/LearnBoost/socket.io.git
+        path = lib/socket.io
+        url = git://github.com/LearnBoost/socket.io.git
